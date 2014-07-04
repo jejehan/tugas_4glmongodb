@@ -1,0 +1,31 @@
+extends layout
+    
+block content
+    .container
+        h1.
+           #{userlist.username}
+        .row
+            .col-md-8
+             
+                p.
+                    id : #{userlist._id}
+                p.
+                    npm : #{userlist.username}
+                p.
+                    nama: #{userlist.nama}
+            .col-md-4
+                .panel.panel-default
+                    .panel-heading
+                        h3.panel-title.
+                            Navigasi
+                    .panel-body
+                        ul.list-group
+                            li.list-group-item
+                                a(href="/users/edituser/#{userlist._id}").
+                                    Edit User
+                            li.list-group-item
+                                a(href="/users/changepassword/#{userlist._id}").
+                                    Change Password
+                            li.list-group-item
+                                a(href="/users/remove/#{userlist._id}").
+                                    Remove User       

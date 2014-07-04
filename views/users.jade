@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .container
+        h1.
+            User List
+        .row
+            .col-md-8
+                table.table.table-striped
+                    tr
+                        td.
+                            NPM
+                        td.
+                            NAMA
+                    each user,i in userlist
+                        tr
+                            td
+                                a(href="users/profile/#{user._id}")=user.username
+                            td.
+                                #{user.nama}
+            .col-md-4
+                .panel.panel-default
+                    .panel-heading
+                        h3.panel-title.
+                            Navigasi
+                    .panel-body
+                        ul.list-group
+                            li.list-group-item
+                                a(href="users/newuser").
+                                    New User

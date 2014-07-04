@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    title=title
+    .container
+        h1= title
+        .row
+            .col-md-8
+                form#formAddUser(name="adduser",method="post",action="/penilaian/updatenilai",role="form")
+                    .form-group
+                        label(for="inputKmk"). Kode Mata Kuliah
+                        input#inputKmk(type="text", placeholder="Kode Matkul", name="kmk",class="form-control",size="30",value="#{data.kmk}")
+                    .form-group
+                        label(for="inputNpm"). Npm
+                        input#inputNpm(type="text", placeholder="NPM", name="npm",class="form-control",size="30",value="#{data.npm}")
+                    .form-group
+                        label(for="inputKelas"). Kelas
+                        input#inputKelas(type="text", placeholder="Kelas", name="kelas",class="form-control",size="30",value="#{data.kelas}")
+                    .form-group
+                        label(for="inputNilai"). Nilai
+                        input#inputNilai(type="text", placeholder="Nilai", name="nilai",class="form-control",size="30",value="#{data.nilai}")
+                    
+                    input#inputHideId(type="hidden", name="_id",value="#{data._id}")
+                    input#inputHideId(type="hidden", name="prevData",value="#{data._id}~#{data.kmk}~#{data.npm}~#{data.kelas}~#{data.nilai}")
+                    button#btnSubmit(type="submit",class="btn btn-submit") submit
+            .col-md-4
+                .panel.panel-default
+                    .panel-heading
+                        h3.panel-title.
+                            Navigasi
+                    .panel-body
+r      
+                

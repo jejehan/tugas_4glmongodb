@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    title=title
+    .container
+        h1= title
+        .row
+            .col-md-8
+                form#formaddmhs(name="newmhs",method="post",action="/mahasiswa/newmhs",role="form")
+                    .form-group
+                        label(for="inputUsername"). Npm
+                        input#inputUserName(type="text", placeholder="NPM", name="npm",class="form-control",size="30")
+                    .form-group
+                        label(for="inputName"). Name
+                        input#inputName(type="text", placeholder="NAMA", name="nama",class="form-control",size="30")
+                    .form-group
+                        label(for="inputName"). Kelas
+                        input#inputName(type="text", placeholder="KELAS", name="kelas",class="form-control",size="30")
+                    
+                    button#btnSubmit(type="submit",class="btn btn-submit") submit
+            .col-md-4
+                

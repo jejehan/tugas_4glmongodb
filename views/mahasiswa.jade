@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    .container
+        h1.
+            mhs List
+        .row
+            .col-md-8
+                table.table.table-striped
+                    tr
+                        td.
+                            NPM
+                        td.
+                            NAMA
+                    each mhs,i in data
+                        tr
+                            td
+                                a(href="mahasiswa/profile/#{mhs._id}")=mhs.npm
+                            td.
+                                #{mhs.nama}
+            .col-md-4
+                .panel.panel-default
+                    .panel-heading
+                        h3.panel-title.
+                            Navigasi
+                    .panel-body
+                        ul.list-group
+                            li.list-group-item
+                                a(href="mahasiswa/newmhs").
+                                    Add Mahasiswa

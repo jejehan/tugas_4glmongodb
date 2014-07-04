@@ -1,0 +1,37 @@
+extends layout
+
+block content
+    .container
+        h1.
+            Penilaian
+        .row
+            .col-md-12
+               table.table.table-striped
+                    tr
+                        td.
+                            NO
+                        td.
+                            ID
+                        td.
+                            UPDATE DATE
+                        td.
+                            IP
+                        td.
+                           COLL. NAME
+                        td.
+                           SHOW DATA   
+                    each cVersi,i in data
+                        tr
+                            td.
+                               #{i+1}
+                            td.
+                               #{cVersi.document_id}
+                            td.
+                                #{cVersi.updated_at.toISOString()}
+                            td.
+                                #{cVersi.ip_address}
+                            td.
+                                #{cVersi.collection_name}
+                            td.
+                                #{JSON.stringify(cVersi.document_values),null,4}
+            

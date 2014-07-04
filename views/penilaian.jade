@@ -1,0 +1,50 @@
+extends layout
+
+block content
+    .container
+        h1.
+            Penilaian
+        .row
+            .col-md-8
+               table.table.table-striped
+                    tr
+                        td.
+                            NO
+                        td.
+                            KMK
+                        td.
+                            NPM
+                        td.
+                            KELAS
+                        td.
+                            NILAI
+                        td.
+                        td.
+                            
+                    each cNilai,i in data
+                        tr
+                            td.
+                               #{i+1}
+                            td.
+                               #{cNilai.kmk}
+                            td.
+                                #{cNilai.npm}
+                            td.
+                                #{cNilai.kelas}
+                            td.
+                                #{cNilai.nilai}
+                            td
+                                a(href="penilaian/updatenilai/#{cNilai._id}") Update
+                            td
+                                a(href="penilaian/versioning/#{cNilai._id}") History Update
+            .col-md-4
+                .panel.panel-default
+                    .panel-heading
+                        h3.panel-title.
+                            Navigasi
+                    .panel-body
+                        ul.list-group
+                            li.list-group-item
+                                a(href="penilaian/inputnilai").
+                                    Input Nilai Mahasiswa
+                           
